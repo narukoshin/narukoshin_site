@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"net/http"
 	"os"
 	"text/template"
@@ -32,6 +31,15 @@ func main() {
 		if _, err := os.Stat(location); !os.IsNotExist(err) {
 			http.ServeFile(w, r, location)
 		} 
+	})
+
+	// giving access to the stylesheet folder
+	router.HandleFunc("/assets/css/{name}", func(w http.ResponseWriter, r *http.Request) {
+		name := mux.Vars(r)["name"]
+		location := "assets/css/" + name
+		if _, err := os.Stat(location); !os.IsNotExist(err) {
+			http.ServeFile(w, r, location)
+		}
 	})
 	http.ListenAndServe(":8000", router)
 }
