@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{- .Site.Title -}}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="resources/css/admin.min.css">
+</head>
+<body>
+    <!-- website content -->
+    <div class="website--container">
+        <nav class="navigation">
+            <a href="#" class="site--name"><span id="name">narukoshin.me</span><span id="hashtag">#iusearchbtw</span></a>
+            <div class="menu--items">
+                <div class="menu--item"><a href="#">Home</a></div>
+                <div class="menu--item"><a href="#">Home</a></div>
+                <div class="menu--item"><a href="#">Home</a></div>
+            </div>
+        </nav>
+        <div class="website--content">
+            <form class="login--form" method="post" action="" type="application/x-www-form-urlencoded">
+                <!-- 雨 -->
+                <div class="login--form--input input--username">
+                    <input type="text" name="admin_username" placeholder="ユーザーネームを入力してください" id="" spellcheck="false">
+                </div>
+                <!-- 起爆の天使 -->
+                <div class="login--form--input input--password">
+                    <input type="password" name="admin_password" placeholder="パスワードを入力してください" id="">
+                </div>
+                <!-- そうもな -->
+                <button class="login--form--submit">ログイン</button>
+                <br>
+                {{ .Site.userData.username }}
+                {{ .Site.userData.password }}
+            </form>
+        </div>
+    </div>
+    <video class="video--background" autoplay loop muted>
+        <source src="resources/video/background-video.mp4" type="video/mp4">
+    </video>
+    <div class="video--background-outground"></div>
+</body>
+</html>
