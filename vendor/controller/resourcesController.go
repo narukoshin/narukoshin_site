@@ -5,6 +5,8 @@ import (
 	"net/http"
 	"fmt"
 	"os"
+
+	"logging"
 )
 
 func ResourcesController(w http.ResponseWriter, r *http.Request){
@@ -14,5 +16,7 @@ func ResourcesController(w http.ResponseWriter, r *http.Request){
 	filePath := fmt.Sprintf("assets/%s/%s", folder, file)
 	if _, err := os.Stat(filePath); !os.IsNotExist(err) {
 		http.ServeFile(w, r, filePath)
+	} else {
+		logging.Save(err)
 	}
 }

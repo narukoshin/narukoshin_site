@@ -2,8 +2,9 @@ package controller
 import (
 	"text/template"
 	"net/http"
-	"log"
 	"os"
+
+	"logging"
 )
 
 type View struct {
@@ -21,7 +22,9 @@ func (v *View) Load(data interface{}) {
 		t := template.Must(template.ParseFiles(fileLocation))
 		err = t.Execute(v.Writer, data)
 		if err != nil {
-			log.Print(err)
+			logging.Save(err)
 		}
+	} else {
+		logging.Save(err)
 	}
 }
