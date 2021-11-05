@@ -10,4 +10,5 @@ let socials = {
 // Redirecting user to the my socials
 let moveTo = (name) => {
     if (socials[name]) return window.open(socials[name])
+    window.location.href = "#socialNotFound"
 }
