@@ -2,7 +2,7 @@ package routers
 
 import (
 	"github.com/gorilla/mux"
-	"controller"
+	"narukoshin.me/controller"
 )
 
 func Route() *mux.Router {
