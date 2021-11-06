@@ -3,7 +3,7 @@ package controller
 import (
 	"net/http"
 
-	"logging"
+	"narukoshin.me/logging"
 )
 
 func HomeController(w http.ResponseWriter, r *http.Request){

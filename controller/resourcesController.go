@@ -1,12 +1,12 @@
 package controller
 
 import (
-	"github.com/gorilla/mux"
 	"net/http"
 	"fmt"
 	"os"
-
-	"logging"
+	
+	"github.com/gorilla/mux"
+	"narukoshin.me/logging"
 )
 
 func ResourcesController(w http.ResponseWriter, r *http.Request){
