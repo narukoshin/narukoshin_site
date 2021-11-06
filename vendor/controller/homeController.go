@@ -1,10 +1,6 @@
 package controller
 
-import (
-	"net/http"
-
-	"logging"
-)
+import "net/http"
 
 func HomeController(w http.ResponseWriter, r *http.Request){
 	data := make(map[string]interface{})
@@ -16,8 +12,5 @@ func HomeController(w http.ResponseWriter, r *http.Request){
 		View: "home/index",
 		Writer: w,
 	}
-	err := view.Load(data)
-	if err != nil {
-		logging.Save(err)
-	}
+	view.Load(data)
 }

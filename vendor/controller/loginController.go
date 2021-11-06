@@ -1,10 +1,7 @@
 package controller
 
-import (
-	"net/http"
+import "net/http"
 
-	"logging"
-)
 func LoginController(w http.ResponseWriter, r *http.Request){
 	data := make(map[string]interface{})
 	data["page"] = Page {
@@ -14,8 +11,5 @@ func LoginController(w http.ResponseWriter, r *http.Request){
 		View: "login/index",
 		Writer: w,
 	}
-	err := view.Load(data)
-	if err != nil {
-	  logging.Save(err)
-	}
+	view.Load(data)
 }
